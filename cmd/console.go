@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/akerl/speculate/creds"
 
@@ -18,7 +19,7 @@ func consoleRunner(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	fmt.Println(url)
+	fmt.Fprint(os.Stderr, url)
 	return nil
 }
 
